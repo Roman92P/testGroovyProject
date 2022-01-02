@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+            choice(name: 'environment', choices: ['dev', 'uat', 'prod'], description: 'Select environment to deploy')
+        }
     stages {
       stage('User input') {
             input {
