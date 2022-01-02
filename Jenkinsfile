@@ -13,5 +13,16 @@ pipeline {
                 echo "Your string ${testString}"
             }
         }
+        post {
+                always {
+                    echo 'Job ends'
+                }
+                success {
+                    echo 'Job is success'
+                }
+                failure {
+                    echo 'Job is failure'
+                }
+            }
     }
 }
